@@ -146,9 +146,9 @@ function HandlerFunction(request, response) {
 
 if (HTTPS_PORT) {
   var httpsopts = {
-    key: fs.readFileSync('/home/hioreanu/ssl/privkey.pem'),
-    cert: fs.readFileSync('/home/hioreanu/ssl/fullchain.pem'),
-    ca: fs.readFileSync('/home/hioreanu/ssl/chain.pem')
+    key: fs.readFileSync('ssl/privkey.pem'),
+    cert: fs.readFileSync('ssl/fullchain.pem'),
+    ca: fs.readFileSync('ssl/chain.pem')
   };
   var https_server = https.createServer(httpsopts, HandlerFunction);
   https_server.listen(HTTPS_PORT);
