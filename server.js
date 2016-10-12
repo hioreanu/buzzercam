@@ -89,7 +89,8 @@ function ShowObject(key, s3object, response) {
 }
 
 function HandlerFunction(request, response) {
-  console.log(request.socket.address().address + " " +
+  console.log(request.socket.remoteAddress + "/" +
+              (request.headers["X-Forwarded-For"] || "") + " " +
               request.method + " " + request.url);
   var creds = auth(request);
   if (!creds ||
