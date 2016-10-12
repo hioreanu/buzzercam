@@ -69,9 +69,9 @@ function ShowDate(datestring, contents, response) {
 }
 
 function ShowObject(key, s3object, response) {
-  if (key.endsWith('.jpg')) {
+  if (key.slice(-4) == '.jpg') {
     response.setHeader('Content-Type', 'image/jpeg');
-  } else if (key.endsWith('.avi')) {
+  } else if (key.slice(-4) == '.avi') {
     response.setHeader('Content-Type', 'video/x-msvideo');
   } else {
     Show404(response);
